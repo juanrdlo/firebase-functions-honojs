@@ -1,8 +1,8 @@
 import { Hono } from 'hono'
 import { getAllBarbers } from './services/getAllBarbers'
 
-const barbers = new Hono()
+// Version 1 de la API de barberos
+const barbersV1 = new Hono().basePath('/v1/barber')
+barbersV1.get('/', getAllBarbers)
 
-barbers.get('/', getAllBarbers)
-
-export default barbers
+export default barbersV1

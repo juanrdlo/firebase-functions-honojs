@@ -10,7 +10,7 @@
 import {setGlobalOptions} from "firebase-functions";
 import { onRequest } from "firebase-functions/https";
 import { honoToFirebase } from "./functions/honoAdapter";
-import barbers from "./apis/barbers/barbers";
+import barbersV1 from "./apis/barbers/barbers";
 
 // Start writing functions
 // https://firebase.google.com/docs/functions/typescript
@@ -32,5 +32,5 @@ setGlobalOptions({ maxInstances: 10 });
 //   response.send("Hello from Firebase!");
 // });
 
-exports.v2_barberos = onRequest({ cors: true, maxInstances: 10 }, honoToFirebase(barbers))
+exports.v1_barberos = onRequest({ cors: true, maxInstances: 10 }, honoToFirebase(barbersV1))
 
