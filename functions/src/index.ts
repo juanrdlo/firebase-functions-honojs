@@ -10,7 +10,7 @@
 import {setGlobalOptions} from "firebase-functions";
 import { onRequest } from "firebase-functions/https";
 import { honoToFirebase } from "./adapter/honoAdapter";
-import {barbers} from "./dev";
+import barbers from "./apis/v1/barber";
 
 // Start writing functions
 // https://firebase.google.com/docs/functions/typescript

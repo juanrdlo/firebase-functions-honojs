@@ -1,8 +1,10 @@
 import { Hono } from 'hono'
 import {getAllBarbers} from "../../controllers/barber-controller";
-
-// Version 1 de la API de barberos
+import {middlewareAuth} from "../../routes/middlewares/middlewares";
 const barbers = new Hono()
+
+// Middleware
+barbers.use(middlewareAuth)
 
 // ROUTES
 barbers.get('/', getAllBarbers)
